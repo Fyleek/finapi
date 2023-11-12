@@ -23,7 +23,8 @@ def sign_in_request(mfa_code: str) -> AuthServiceResponse:
 
     if response.status_code == 201:  # NO MFA
         cookies.save()
-        logging.info("Sign-in OK")
+        logging.info("Sign-in NO MFA OK")
+        return AuthServiceResponse.success(message="Sign-in done")
     elif response.status_code == 202:  # MFA
         otp_relay_token = response.json()["result"]["otp_relay_token"]
         mfa_data = get_credentials_mfa(mfa_code, otp_relay_token)
