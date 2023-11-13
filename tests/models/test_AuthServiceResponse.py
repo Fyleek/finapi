@@ -18,6 +18,7 @@ def test_auth_service_response_constructor():
     assert response.message == ""
     assert response.status_code == 0
 
+
 def test_auth_service_response_success():
     # Test with default parameters
     response = AuthServiceResponse.success()
@@ -34,6 +35,7 @@ def test_auth_service_response_success():
     assert response.detail == "Detail"
     assert response.message == "Custom message"
     assert response.status_code == 201
+
 
 def test_auth_service_response_error():
     # Test with default parameters
