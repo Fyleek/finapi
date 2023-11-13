@@ -13,11 +13,7 @@ def test_get_credentials_with_env_vars(mocker):
 
     result_dict = json.loads(result)
 
-    expected = {
-        "email": "test@example.com",
-        "password": "secret",
-        "device_id": f"{DEVICE_ID}"
-    }
+    expected = {"email": "test@example.com", "password": "secret", "device_id": f"{DEVICE_ID}"}
 
     assert result_dict == expected
 
@@ -25,7 +21,7 @@ def test_get_credentials_with_env_vars(mocker):
 def test_get_credentials_with_file(mocker):
     mocked_file_content = '{"email": "file@example.com", "password": "filesecret"}'
 
-    mocker.patch('builtins.open', mock_open(read_data=mocked_file_content))
+    mocker.patch("builtins.open", mock_open(read_data=mocked_file_content))
 
     mocker.patch.dict(os.environ, {"email": "", "password": ""}, clear=True)
 
@@ -33,11 +29,7 @@ def test_get_credentials_with_file(mocker):
 
     result_dict = json.loads(result)
 
-    expected = {
-        "email": "file@example.com",
-        "password": "filesecret",
-        "device_id": f"{DEVICE_ID}"
-    }
+    expected = {"email": "file@example.com", "password": "filesecret", "device_id": f"{DEVICE_ID}"}
 
     assert result_dict == expected
 
@@ -50,10 +42,6 @@ def test_get_credentials_mfa():
 
     result_dict = json.loads(result)
 
-    expected = {
-        "device_id": f"{DEVICE_ID}",
-        "otp_code": "123456",
-        "otp_relay_token": "token123"
-    }
+    expected = {"device_id": f"{DEVICE_ID}", "otp_code": "123456", "otp_relay_token": "token123"}
 
     assert result_dict == expected
