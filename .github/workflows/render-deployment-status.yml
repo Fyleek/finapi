@@ -1,0 +1,29 @@
+name: Render Deployment Status
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-deployment-status:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12.0'
+
+      - name: Install Python dependencies
+        run: |
+          pip install requests
+
+      - name: Update Deployment Status
+        env:
+          GITHUB_TOKEN: ${{ vars.WORKFLOW_API_KEY }}
+          RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python .github/scripts/update_deployment_status.py
