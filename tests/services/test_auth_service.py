@@ -4,7 +4,6 @@ import pytest
 from unittest import mock
 
 from finapi.constants import API_ROOT
-from finapi.models import AuthServiceResponse
 from finapi.services import sign_in_request
 
 
