@@ -19,7 +19,7 @@ def sign_in_request(mfa_code: str) -> AuthServiceResponse:
 
     response = session.post(signin_url, credentials, headers=headers)
 
-    logging.info(f"{signin_url} was executed | {response.status_code}")
+    logging.info(f"{signin_url} was executed | Status-Code:{response.status_code}")
 
     if response.status_code == 201:  # NO MFA
         cookies.save()
@@ -35,10 +35,12 @@ def sign_in_request(mfa_code: str) -> AuthServiceResponse:
             logging.info("Sign-in MFA OK")
             return AuthServiceResponse.success(message="Sign-in done")
         else:
+            logging.error(f"Sign-in fail MFA KO | ERROR-CODE:{response.status_code}")
             return AuthServiceResponse.error(
                 status_code=response.status_code,
                 detail=response.reason,
                 message=json.loads(response.text)["error"]["code"],
             )
     else:
+        logging.error(f"Sign-in fail | ERROR-CODE: {response.status_code}")
         return AuthServiceResponse.error(status_code=response.status_code, detail=response.reason)
