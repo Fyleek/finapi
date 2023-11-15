@@ -12,5 +12,5 @@ def get_request(endpoint: str) -> FinaryResponse:
         response_json.get("result"),
         response_json.get("message"),
         response_json.get("error"),
-        status_code
+        status_code,
     ).response()
