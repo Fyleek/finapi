@@ -1,6 +1,5 @@
 from .responses import FinapiResponse, FinaryResponse
 
-# TODO Check if possible to not declare them because *
 __all__ = ["FinapiResponse", "FinaryResponse"]
 
 __author__ = "Fyleek"
