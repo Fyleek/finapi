@@ -1,6 +1,7 @@
-from .AuthServiceResponse import AuthServiceResponse
+from .responses import FinapiResponse, FinaryResponse
 
-__all__ = ["AuthServiceResponse"]
+# TODO Check if possible to not declare them because *
+__all__ = ["FinapiResponse", "FinaryResponse"]
 
 __author__ = "Fyleek"
 __description__ = "Contains database models and data structures"
