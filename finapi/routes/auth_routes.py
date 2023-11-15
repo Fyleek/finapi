@@ -9,11 +9,7 @@ router = APIRouter()
 @router.post("/sign-in")
 async def sign_in(credentials: Login):
     try:
-        response = sign_in_request(credentials.mfa_code)
-        if not response.success:
-            raise HTTPException(response.status_code, response.message)
-        else:
-            return response
+        return sign_in_request(credentials.mfa_code)
     except HTTPException as http_e:
         raise HTTPException(http_e.status_code, http_e.detail)
     except Exception as e:
