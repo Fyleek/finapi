@@ -1,18 +1,17 @@
-import http.cookiejar
-
-from finapi.constants import API_ROOT, COOKIE_FILE
+from finapi.constants import API_ROOT
 from finapi.models.responses import FinaryResponse
 from finapi.utils import get_session
 
 
 def get_organizations_request() -> FinaryResponse:
     organizations_url = f"{API_ROOT}/users/me/organizations"
-    cookies = http.cookiejar.MozillaCookieJar(COOKIE_FILE)
-    session = get_session(cookies)
-    response = session.get(organizations_url).json()
+    session = get_session()
+    response = session.get(organizations_url)
+    status_code = response.status_code
+    response_json = response.json()
     return FinaryResponse(
-        response.get("result"),
-        response.get("message"),
-        response.get("status_code"),
-        response.get("error"),
+        response_json.get("result"),
+        response_json.get("message"),
+        response_json.get("error"),
+        status_code
     ).response()
