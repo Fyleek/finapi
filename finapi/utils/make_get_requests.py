@@ -3,7 +3,7 @@ from finapi.models import FinaryResponse
 from finapi.utils import get_session
 
 
-def make_get_request(endpoint: str) -> FinaryResponse:
+def get_request(endpoint: str) -> FinaryResponse:
     session = get_session()
     response = session.get(f"{API_ROOT}/{endpoint}")
     status_code = response.status_code
