@@ -1,6 +1,7 @@
 from .auth_service import sign_in_request
+from .users_service import get_organizations_request
 
-__all__ = ["sign_in_request"]
+__all__ = ["sign_in_request", "get_organizations_request"]
 
 
 __author__ = "Fyleek"

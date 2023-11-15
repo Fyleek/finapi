@@ -1,6 +1,6 @@
-from .AuthServiceResponse import AuthServiceResponse
+from .responses import FinapiResponse, FinaryResponse
 
-__all__ = ["AuthServiceResponse"]
+__all__ = ["FinapiResponse", "FinaryResponse"]
 
 __author__ = "Fyleek"
 __description__ = "Contains database models and data structures"

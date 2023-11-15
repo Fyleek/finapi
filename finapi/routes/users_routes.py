@@ -1,15 +1,14 @@
 from fastapi import APIRouter, HTTPException
 
-from finapi.schemas.Login import Login
-from finapi.services.auth_service import sign_in_request
+from finapi.services import get_organizations_request
 
 router = APIRouter()
 
 
-@router.post("/sign-in")
-async def sign_in(credentials: Login):
+@router.get("/organizations")
+async def get_organizations():
     try:
-        return sign_in_request(credentials.mfa_code)
+        return get_organizations_request()
     except HTTPException as http_e:
         raise HTTPException(http_e.status_code, http_e.detail)
     except Exception as e:
