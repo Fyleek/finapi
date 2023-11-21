@@ -1,14 +1,14 @@
 from fastapi import APIRouter, HTTPException
 
-from finapi.services import get_me_request
+from finapi.services import get_organizations_request
 
 router = APIRouter()
 
 
-@router.get("/me")
-async def get_user_me():
+@router.get("/")
+async def get_organization():
     try:
-        return get_me_request()
+        return get_organizations_request()
     except HTTPException as http_e:
         raise HTTPException(http_e.status_code, http_e.detail)
     except Exception as e:
