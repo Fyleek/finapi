@@ -1,4 +1,3 @@
-from finapi.models import FinapiResponse
 from finapi.models.responses import FinaryResponse
 from finapi.utils import get_request
 
