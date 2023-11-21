@@ -16,6 +16,7 @@ def sign_in_request(mfa_code: str):
     headers = get_header_login(credentials)
     cookies = http.cookiejar.MozillaCookieJar(COOKIE_FILE)
     session = get_session()
+    session.cookies = cookies
 
     response = session.post(signin_url, credentials, headers=headers)
 
