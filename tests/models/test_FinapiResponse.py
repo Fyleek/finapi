@@ -1,7 +1,7 @@
 import pytest
 from fastapi import HTTPException
 
-from finapi.models import FinapiResponse
+from finapi.schemas import FinapiResponse
 
 
 def test_auth_service_response_constructor():

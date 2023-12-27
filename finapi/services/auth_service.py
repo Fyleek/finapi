@@ -3,7 +3,7 @@ import json
 import logging
 
 from finapi.constants import API_ROOT, COOKIE_FILE
-from finapi.models import FinapiResponse
+from finapi.schemas import FinapiResponse
 from finapi.utils.credentials_handler import get_credentials, get_credentials_mfa
 from finapi.utils.header_handler import get_header_login
 from finapi.utils.session_handler import get_session

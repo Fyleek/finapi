@@ -1,5 +1,5 @@
 from finapi.constants import API_ROOT
-from finapi.models import FinaryResponse
+from finapi.schemas import FinaryResponse
 from finapi.utils import get_session
 
 
