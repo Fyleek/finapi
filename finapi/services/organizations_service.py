@@ -40,9 +40,9 @@ def get_time_series(organization_id: str, user_id: str, period: str, type1: str,
         f"organizations/{organization_id}/memberships/{user_id}/timeseries?period={period}&type={type1}&categories={categories}")
 
 # TODO Check all possible values for category
-def get_asset_list(organization_id: str, user_id: str, limit: int, period: str, category: str, order: str) -> FinaryResponse:
+def get_asset_list(organization_id: str, user_id: str, limit: int, period: str, categories: str, order: str) -> FinaryResponse:
     return get_request(
-        f"organizations/{organization_id}/memberships/{user_id}/asset_list?limit={limit}&period={period}&category={category}&order={order}")
+        f"organizations/{organization_id}/memberships/{user_id}/asset_list?limit={limit}&period={period}&categories={categories}&order={order}")
 
 
 def get_investments(organization_id: str, user_id: str, period: str) -> FinaryResponse:
