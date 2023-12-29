@@ -114,21 +114,6 @@ f"organizations/{organization_id}/memberships/{user_id}/portfolio/geographical_d
 f"organizations/{organization_id}/memberships/{user_id}/portfolio/assets_leaderboard?type={type}&mode={mode}" # Check different value for type & mode   str / str
 f"organizations/{organization_id}/memberships/{user_id}/views/insights"
 f"organizations/{organization_id}/memberships/{user_id}/insights/financial_projection?montly_contribution={ammount}&duration={year}" # int / int
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
-f"organizations/{organization_id}/memberships/{user_id}/"
 
 
 
