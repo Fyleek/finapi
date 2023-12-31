@@ -2,17 +2,6 @@ from finapi.schemas import FinaryResponse
 from finapi.utils import get_request
 
 
-# TODO Create "period" schema = ["1m"|"1w"|"1d"|"ytd"|"1y"|"all"] => Default "all"
-# TODO Create "type1" schema = ["all"|"sum"] => Default "sum"
-# NOTE => seems to be specific timeseries type schema
-# TODO Create "distribution_type" schema = ["stock"|"account"|"type"] => Default "type"
-# TODO Create "categories" schema = ["investments"|&"savings"|&"checkings"] => Default "" (all's)
-# NOTE => Add %2C (space) between each param in the request
-# TODO Create "dashboard_type" schema = ["gross", "net", "finary"]
-# TODO Create "order" schema = ["perf_high_low","perf_low_high","perf_percent_high_low","perf_percent_low_high"]
-#
-
-
 # Direct Finary response
 
 def get_organizations_request() -> FinaryResponse:
