@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from finapi.schemas.Login import Login
-from finapi.services.auth_service import sign_in_request
+from finapi.services.auth import sign_in_request
 
 router = APIRouter()
 
