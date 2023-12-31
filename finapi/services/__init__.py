@@ -1,8 +1,5 @@
-from .auth_service import sign_in_request
-from .users_service import get_me_request
-from .organizations_service import get_organizations_request
-
-__all__ = ["sign_in_request", "get_me_request", "get_organizations_request"]
+from .auth import sign_in_request
+from . import users
 
 
 __author__ = "Fyleek"
